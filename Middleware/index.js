@@ -2,6 +2,7 @@ const express = require("express")
 const { get } = require("express/lib/response")
 const app = express()
 const morgan = require("morgan")
+const appError = require("./appError")
 
 app.use(morgan("tiny"))
 
@@ -11,7 +12,7 @@ const verifyPass = ("/secret", (req, res, next) => {
         next()
     }
     // res.send("Sorry you need a password")
-    throw new Error("Password is required")
+    throw new appError("Password is required", 401)
     // res.status(404).send("Webpage not found")
 })
 
@@ -48,14 +49,15 @@ app.get("/dogs", (req, res) => {
     res.send("This is for dogs")
 })
 
+app.get("/admin", (req, res) => {
+    throw new appError("You are not an admin", 403)
+})
+
 // All errors will be hitting this middleware
 app.use((err, req, res, next) => {
-    console.log("**")    
-    console.log("*Error*")    
-    console.log("**")
-    console.log(err)    
-    // res.status(500).send("This is an error")
-    next(err)
+    const status = err.status
+    console.log(status)
+    res.status(status).send(err.message)
 })
 
 app.listen(3000, () => {
