@@ -1,0 +1,8 @@
+DOM - Document Object Model
+It is the JS representation of a webpage
+IT's a bunch of objects that you can interact via JS
+It will make the webpage interactive
+JS will manage the HTML and CSS in a webpage.
+Every tag in HTML is a body
+The Documents is the parent of all the tags in a webpage, it is also an object
+It is the entry point into the DOM, and contains all the tags inside.

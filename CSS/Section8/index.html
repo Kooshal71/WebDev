@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Box model CSS</h1>
+    <h1>This is very cool</h1>
+    <hr />
+    <div class="one">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis,
+        suscipit. Consectetur reiciendis quod dolorum doloribus corporis! Quasi
+        consequuntur nostrum sapiente pariatur sequi asperiores, nisi recusandae
+        amet labore aperiam minus? Dolorem. Corporis itaque deserunt ratione
+        expedita doloribus necessitatibus vel repudiandae. Ad quo cupiditate vel
+        amet mollitia quod cumque maiores, aliquam itaque voluptatum saepe ipsam
+        tempore perspiciatis voluptatibus quis magnam, repellat magni! Iure
+        animi nemo, esse earum totam corporis, accusantium soluta unde
+        blanditiis quaerat ducimus corrupti deserunt, ad maxime quasi aperiam
+        nam nesciunt suscipit fuga? Molestias aut quidem tempora dolorum hic
+        totam.
+      </p>
+    </div>
+    <div class="two">
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo porro
+        ipsum dolor dolores praesentium, perferendis molestiae incidunt quos,
+        repellat reprehenderit quo nobis temporibus! Assumenda harum eveniet cum
+        quo aperiam deleniti?
+      </p>
+    </div>
+    <div class="three">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa provident
+        minima officiis illum delectus eum excepturi praesentium adipisci
+        possimus magni. Id similique tenetur autem obcaecati deserunt ipsam
+        dicta perspiciatis doloremque. Accusantium quod voluptas suscipit
+        cupiditate vitae tenetur voluptates eaque officiis quo incidunt beatae
+        soluta, ipsam itaque voluptatem culpa, optio qui consectetur
+        voluptatibus dignissimos officia fugiat delectus repudiandae! Incidunt,
+        labore ratione. Pariatur praesentium vitae dolorem nostrum, provident
+        natus et tempora veritatis. Nostrum temporibus explicabo, maxime, quasi
+        adipisci nulla commodi illo voluptate enim dolores est ut? Mollitia vel
+        corporis quasi nihil nesciunt. Quod exercitationem, necessitatibus esse
+        debitis sunt architecto, aliquid pariatur consequuntur, nisi mollitia
+        ipsa omnis adipisci. Optio dolor vel, asperiores quod consectetur
+        laboriosam delectus, sint reprehenderit est, molestiae sunt laborum!
+        Fugit. Magnam natus fugiat vel nulla quo, corporis quasi ipsum.
+        Eligendi, deserunt quas. Autem excepturi iste, laborum eaque asperiores
+        est explicabo, ducimus cumque ipsa optio cupiditate ex dolore, soluta
+        maxime fugit. Atque, vero nihil, aliquid maiores temporibus maxime
+        laudantium similique mollitia doloribus a libero architecto culpa earum
+        reprehenderit cum iure ipsa illo praesentium, sunt quo explicabo eius
+        tempore. Voluptatibus, doloremque nisi! Illo perspiciatis consequuntur
+        mollitia atque fuga quaerat saepe reiciendis, nobis illum facere
+        architecto, accusamus officia dolores! Commodi, magnam rem laborum
+        soluta vero omnis dolorem quis labore, hic perferendis, exercitationem
+        atque? Qui explicabo quaerat dolorem quae. Mollitia impedit alias
+        placeat. Labore consectetur asperiores illo, blanditiis assumenda rem
+        temporibus, fugiat quisquam debitis quos a qui modi dolorum pariatur
+        placeat corrupti hic necessitatibus? Quos nesciunt enim earum dolorem
+        laborum aliquid nisi suscipit, odio rem a saepe, reprehenderit nam
+        fugiat. Accusamus esse veniam aliquid rerum culpa voluptatem sint cumque
+        assumenda libero beatae, possimus expedita. Dicta animi provident aut
+        tempore repudiandae iusto maiores dolor! Nam minus maiores sit harum
+        vitae rem, sapiente porro doloribus, quasi ab minima. Laudantium
+        suscipit molestiae officiis asperiores impedit, maiores inventore.
+      </p>
+    </div>
+    <!--
+      Every element has multiple boxes around it
+      There are 4 boxes:-
+      1) Content Box
+      2) Padding
+      3) Border
+      4) Margin
+      These are controlled to modify the spacing and the arrangement
+      width and height are setting the content area by default
+    -->
+    <!--
+      Border
+      Space between the margin and the padding
+      **skin**
+      color
+      width
+      radius
+      style
+      border shorthand
+      border:width style color;
+    -->
+    <!--
+      Padding
+      Space between the info and the border
+      **fat**
+      padding attributes
+      top left bottom right
+      padding shorthand
+      padding: value - value is applied to all sides
+      padding: value 1 value 2 - value 1 is applied to vertical and value 2 is applied to horizontal
+      padding: value 1 value 2 value 3
+        value 1 is applied to top value 2 is applied to horizontal and value 3 is applied to bottom
+      padding: value 1 value 2 value 3 value 4
+        value 1 is applied to top value 2 is appleid to right value 3 is applied bottom and value 4 is applied to left
+    -->
+    <!--
+      Margin
+      **outside**
+      The space outside the border or around the entire element
+      shorthand is similar to padding
+    -->
+    <button>Padding</button>
+    <!--
+      Display
+      inline -
+        the content field is not respected
+        the padding is respected
+        border is respeceted 
+        the margin is respcted only on the line
+      block - 
+        All the dimensions are respected in the case of block elements
+      inline-block -
+        Behaves like an inline element but all the dimensions are respected
+      none
+        This will hide the elements
+    -->
+    <br />
+    <div>a</div>
+    <div>b</div>
+    <div>c</div>
+    <span>This is span</span>
+    <!--
+      Relative Units
+      percentage % it is always relative to some other value
+      width: 50% - it means half the width of the parent element
+      line-height: 50% - half the font-size of the element itself
+      
+      em it is relative to the font size 1em is equal to the font size 
+      of the parent
+      with other properties 1em is equal to the computed font-size of the 
+      element itself
+      font size of the element depends on the font size of the parent element
+      size of *other properties depends on the font size of the element itself
+      * - padding, margin, border etc.
+      The issue with em is that they can grow very fast since they are based upon 
+      the parent font-size
+      rem
+      relative to the root HTML element
+      Since the size is dependent on only the root size, they will be constant
+      throughout the web page
+      Therefore 1 rem will be the same size everywhere
+      It is generally more useful
+
+      Using both em and rems will be very frequently used 
+    -->
+    <div>CSS Units</div>
+    <section>
+      <div class="intern"></div>
+    </section>
+  </body>
+</html>

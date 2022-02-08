@@ -1,0 +1,44 @@
+h1 {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin-bottom: 0;
+  font-weight: 500;
+  text-decoration: rgb(65, 65, 65) underline;
+}
+h2 {
+  font-family: "Montserrat", sans-serif;
+  text-align: right;
+  font-weight: 200;
+  text-decoration: black underline;
+  margin-right: 5%;
+}
+img {
+  width: 24%;
+  margin: 2%;
+  position: relative;
+  height: 20%;
+}
+.left {
+  margin-right: 2%;
+  margin-left: 5%;
+}
+.middle {
+  margin: 2% 5%;
+}
+.right {
+  margin-left: 2%;
+}
+div {
+  margin: 0;
+  background-color: #000;
+}
+body {
+  margin: 0;
+  background-color: grey;
+}
+hr {
+  border-top: 8px solid rgb(49, 49, 49);
+  border-bottom: 0;
+  margin: 0px;
+  background-color: #fff;
+}

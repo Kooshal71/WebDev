@@ -1,0 +1,56 @@
+h3 {
+  color: darkgoldenrod;
+  text-align: center;
+  font-weight: normal;
+  font-style: oblique;
+  text-decoration: blue overline;
+}
+button {
+  color: rgba(90, 41, 41, 0.719);
+  background-color: pink;
+}
+p {
+  color: rgb(106, 141, 47);
+  font-weight: bolder;
+  text-decoration: underline;
+  line-height: 2;
+}
+h2 {
+  background-color: darkred;
+  color: #0f5679;
+}
+h1 {
+  text-align: center;
+  text-decoration: blue underline wavy;
+  letter-spacing: 16px;
+  font-size: 100px;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: fantasy;
+}
+/*
+    Colors
+    Ways to represent:
+    1)named colors - easiest but most limited(140 colors)
+    2)RGB - each color ranges from 0-255 changing 
+            these values will provide a different color
+    3)Hex - they are represented with hexadecimal and
+            they all range from 0-255
+*/
+/*
+    Text
+    text - align
+    This dictates where the text goes inside the element
+    font-weight
+    This shows how dark the font should be
+    text-decoration
+    Controls the decorative lines on text
+    line-height
+    Controls distance between each line
+    letter-spacing
+    Controls the distance between the letters
+    font-size
+    There is many different ways to control the size
+    They are of 2 types:
+    1) relative; 2) absolute
+
+*/

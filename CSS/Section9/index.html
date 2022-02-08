@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--
+        RGBA
+        A - alpha channel this changes the transparency
+        The value ranges from 0 to 1
+        where 0 indicates completely transparent
+    -->
+    <!-- 
+        position
+        sets how other properties work
+        
+        static is the default
+        
+        relative will change the position wrt to previous position
+        
+        absolute the element is removed from the normal document flow
+        and no position is reserved for the element and the position is giver
+        wrt to the position of the ancestor and if none just the body
+
+        fixed is similar to absolute but it is independent from the ancestor
+        and it is always fixed to the main parent block and all offsets are 
+        taken wrt to that block usually the body
+    -->
+    <h1>Position</h1>
+    <!-- <h2>Static</h2> -->
+    <div id="first"></div>
+    <div id="second"></div>
+    <div id="third"></div>
+    <div class="circle"></div>
+    <!--
+      Transitions
+      Property name
+        Only the property name will take time
+      duration
+        The amount of time required for the transition
+      timing function
+        the rate at which the trasition takes place
+      delay
+        This specifies the delay before the transition even begins
+      -->
+    <!--
+        Transform
+        we can transform the elements to change shape, size and location
+        rotate
+        origin
+        scale
+        translate
+        skew
+      -->
+    <!--
+        Fonts
+        There are some web safe fonts which is a very small collection
+        We can include a font file in our document so that we can use that in our webpage
+        Google fonts is a free website that we can use for this
+      -->
+    <section>
+      <h1 id="one">Headline 1</h1>
+      <h1 id="two">Headline 2</h1>
+      <h1 id="three">Headline 3</h1>
+      <h1 id="four">Headline 4</h1>
+      <h1 id="five">Headline 5</h1>
+    </section>
+  </body>
+</html>

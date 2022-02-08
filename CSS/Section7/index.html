@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS selectors</h1>
+    <hr />
+    <form action="https://duckduckgo.com" target="blank">
+      <input type="text" placeholder="search" name="q" />
+      <button id="log">Login</button>
+      <button>Signup</button>
+      <!-- 
+        * is know as the universal selector
+        it contains all the text that is present withiin it
+        , can be used to change multiple selectors
+      -->
+      <h2>This is amazing</h2>
+      <!-- 
+        id selector
+        We can use ids on any element to provide a hook
+        to the element so that CSS can be applied on it
+        the id should not repeat, therefore it can be used only once
+        id should not start with numbers or have any spaces
+        They should be used to a minimum
+        Syntax:-
+        #id{
+          property:value;
+        }
+      -->
+      <!-- 
+        class selectors
+        We can use classes on groups of elements this allows
+        us to change all the elements have the same class to be
+        modified at once
+        Syntax:-
+        .class{
+          property:value;
+        }
+      -->
+      <!-- 
+          descendent selectors
+          selects elements that are present within other elements
+          this will style only the internal elements having the mentioned
+          external elements
+          Syntax:-
+          external internal{
+            property:value;
+          }
+          li a{
+            color: purple;
+          }
+        -->
+      <!-- 
+        adjacent selector
+        They select only the elements that are immediatly
+        followed by the next element
+        Syntax:-
+        element1 + element2{
+          property:value;
+        }
+        h1 + p{
+          property:value;
+        }
+        This will select the paragraph right after h1
+      -->
+      <!-- 
+        direct child
+        selects the elements which are the direct child 
+        of the parent element
+        Syntax:-
+        parent > child{
+          property:value;
+        }
+        footer > a{
+          color:green;
+        }
+      -->
+      <!-- 
+        Attribute selector
+        Select all elements having a particular type
+        Syntax:-
+        element[attribute=""]{
+          property:value;
+        }
+        input[type="text"]{
+          color:red;
+        }
+        -->
+      <!-- 
+        pseudo classes
+        keywords added to a selector that specifies a
+        speacial state of the element
+        Syntax:-
+        element:class{
+          property:value;
+        }
+        a:hover{
+          color:red;
+        }
+      -->
+      <!--
+        pseudo elements
+        Keywords added to a selector that specifies a 
+        particular part of the element
+        Syntax:-
+        element::part{
+          property:value;
+        }
+        h2::first-letter{
+          font-size: 50px;
+        }
+      -->
+      <!-- 
+        Cascading
+        The order of declaration matter whichever is declared
+        later will have a higher priority
+        element{
+          property:value1;
+        }
+        element{
+          property:value2;
+        }
+        value2 will be applied to the property of the element
+        If more than one stylesheet is linked in the HTML
+        file then the order in which the files are linked will also
+        change the behaviour of the webpage.
+      -->
+      <!--
+        Specificity
+        Rules followed when there is a conflict in styling
+        the same element.
+        There is a measure of how specific a given selector
+        is to find out which is more important
+        id > class > element
+        If there is a tie in the specificity score then whichever
+        comes later will be applied
+      -->
+      <!--
+        Inline Styles are the most specific and are used
+        directly in the HTML code and whatever change is present
+        in the stylesheet will not change the style of the element
+      -->
+      <!--
+        !important is an attribute used in CSS to give
+        highest specific and it will be used irespective of
+        position or specificity
+        Not a good practice
+      -->
+    </form>
+    <button class="try">Button 1</button>
+  </body>
+</html>

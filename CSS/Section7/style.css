@@ -1,0 +1,10 @@
+#log {
+  background-color: blueviolet;
+}
+.try:hover {
+  color: red;
+}
+.try:active {
+  background-color: blueviolet;
+  color: black;
+}

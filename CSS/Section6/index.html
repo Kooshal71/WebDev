@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS</title>
+    <style>
+      h2 {
+        color: blueviolet;
+      }
+      #internal {
+        color: darkolivegreen;
+      }
+      #word {
+        font-weight: bold;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!--
+        CSS - Cascading Style Sheets
+        General Syntax:-
+        selector{
+            property: value;
+        }
+        Example:-
+        h1{
+            color: purple;
+        }
+        input[type="text"]:nth - of - type(2n){
+            border: 2px solid red
+        }
+        every second input will have a red border
+        
+        Ways to use CSS
+        1)inline - 
+            specify the style within the property
+            This is not at all recomended as it is very tedious
+            This also makes the HTML very hard to read
+        2)internal - 
+            sepcify the style within the HTML file
+            This is also not as recomended as much as external
+            Helps in reading HTML
+            This is present in the head section of the HTML
+        3)external - 
+            Styles are written in an external style sheets
+            This is linked using <link>
+            This is most used practiced
+        Order of priority
+        inline>internal>external
+    -->
+    <h1 style="color: purple">Hello World</h1>
+    <button style="background-color: teal">I am a button</button>
+    <h2>This is amazing</h2>
+    <h2>This is bad</h2>
+    <h2>This is good</h2>
+    <h3>This is the final Example</h3>
+    <h3>This is the <b> final </b>Example for external CSS</h3>
+    <h3>This is the final Example for CSS</h3>
+    <button style="color: blue">Button 1</button>
+    <button id="internal">Button 2</button>
+    <button>Button 3</button>
+    <button>Button 4</button>
+    <button>Button 5</button>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quae
+      voluptatibus totam ullam repudiandae aliquid possimus nam maxime assumenda
+      optio ab, repellat at asperiores laboriosam exercitationem, explicabo, eum
+      fugit autem. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      Delectus inventore officiis, laborum labore eum distinctio vitae minus
+      reprehenderit ducimus ad voluptatem culpa hic, perspiciatis pariatur
+      repellat. Odio itaque beatae nostrum. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Exercitationem obcaecati, nostrum minima
+      beatae omnis officia nam sint dignissimos repellat rem, quae quod! Maxime
+      molestias corporis distinctio et ut, soluta aut! Lorem, ipsum dolor sit
+      amet consectetur adipisicing elit. Maiores obcaecati eos molestiae rem
+      similique aspernatur dolorem. Quasi error voluptates, odit molestiae
+      cumque fugit voluptatibus. Ex ab alias veniam. Placeat, magnam.
+    </p>
+  </body>
+</html>

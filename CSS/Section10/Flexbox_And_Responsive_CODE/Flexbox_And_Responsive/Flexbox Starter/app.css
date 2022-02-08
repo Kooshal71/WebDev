@@ -1,0 +1,37 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+h1 {
+  text-align: center;
+}
+#container {
+  background-color: #003049;
+  width: 90%;
+  height: 500px;
+  margin: 0 auto;
+  border: 5px solid #003049;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+/*main axis goes from left to right 
+    cross axis goes from top to bottom
+  */
+/*
+    flex direction is goin from left to right by default
+    That config is known as row 
+*/
+/*
+Flex sizing 
+ */
+#container div {
+  width: 200px;
+  height: 100px;
+  flex-basis: 300px;
+  /* flex-grow: 1; */
+  /* flex basis increases the size of the elements if there is some space to be occupied */
+}
+div:nth-of-type(5) {
+  flex-shrink: 2;
+}

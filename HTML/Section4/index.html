@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section4</title>
+  </head>
+  <body>
+    <h1>This is my webpage</h1>
+    <!--
+        Block elements
+        They take up the entire line 
+        They do force the elements to the next line
+        They can be assumed to take up an entire block
+        Anolagous to having a br statement after the element
+
+        Inline elements
+        They only take up as much space as required
+        They do not occupy the entire line
+        Multiple elements can exist side by side
+    -->
+    <!--
+        div is the division element
+        behaves like a container that holds elements toghether
+        Mostly used along with CSS
+        It is a block container.
+    -->
+    <div>
+      <p>This is div.</p>
+    </div>
+    <!--
+      span is an inline container that is very similar to div
+      we can single out any content that we want to style with css
+      Generic element that we can wrap around
+    -->
+    <span> Yea, so this is span. </span>
+    <!--
+      hr is a horizontal rule
+      it has no content or attribute
+      it doesnt require anny closing tab
+    -->
+    <hr />
+    The line represents a horizontal rule
+    <!--
+      br is the line break element
+      it is similar to a new line
+      We can create new lines with this method
+    -->
+    <p>
+      Hello there <br />
+      My name is Kushal <br />
+      I am 19 years old <br />
+      I study BTech in PESU <br />
+      The lines are in the next line due to break element.
+    </p>
+    <!--
+      superscript
+      it is elevated of the base line
+      sup is the element
+      it is like the powers of a base.
+
+      subscript
+      it is placed below the base line
+      sub is the element
+      It is like the number of reactents in a chemical reaction.
+    -->
+    <p>
+      examples of super and sub script <br />
+      2<sup>3</sup> + 3<sup>2</sup> = 17 <br />
+      CH<sub>3</sub>COOH is the formula of acetic acid.
+    </p>
+    <!--
+      HTML Entities
+      they start with ampersand and end with semicolon
+      Display reserved characters
+      Used as an alternative to difficult to type char
+      browsers renders then and correctly reperesent them
+    -->
+    <p>
+      These all are examples of entity codes <br />
+      1 &lt; 6 <br />
+      2 &gt; 1 <br />
+      &dagger; <br />
+      The 4 suites of cards are:- <br />
+      &clubsuit; &diamondsuit; &heartsuit; &spadesuit;
+    </p>
+    <!--
+      Semantic Markup
+      Markup that has meaning 
+      example : using main and headers instead of divs
+      This doesnt show any change in the website but makes a large difference when reading it
+      These elements are newer that shows the browsers exactly what it means
+      Search Engine will easily find the parts of the webpage is we use semantic markup
+      Screen Readers will read the different parts as hooks and give the info.
+      There is no new features or appearence.
+    -->
+    <header>This is the header.</header>
+    <footer>This is the footer.</footer>
+    <!--
+      main - 
+          contains the important contents of the page
+          doesnt contain the nav, header or footer
+      header - 
+          contains the header of the web page usually just the name of webpage
+      footer - 
+          contains the footer of the web page usually the contact info and customer support
+      nav - 
+          contains the navigation bar of the webpage and maybe present in the header element
+      section - 
+          contains the section very similar to div but much better
+      article - 
+          the inner element has some reference to the outer element
+      aside - 
+          These are the non essential parts of the web page
+          They are like bonus topics next to the main parts
+        -->
+    <!--
+        Emmet abrevations can be quickly used to create 
+        multiple lists and divivsion
+        ul>li.item$*5 is the shortcut to create the following list
+      -->
+    <ul>
+      <li class="item1"></li>
+      <li class="item2"></li>
+      <li class="item3"></li>
+      <li class="item4"></li>
+      <li class="item5"></li>
+    </ul>
+  </body>
+</html>

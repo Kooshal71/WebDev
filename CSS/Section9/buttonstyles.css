@@ -1,0 +1,28 @@
+body {
+  background-color: #0a0c09;
+}
+button {
+  background-color: rgba(0, 0, 0, 0);
+  color: #f58822;
+  border: 2px solid #f58822;
+  /* margin: 25%;
+  margin-left: 45%; */
+  margin: auto;
+  margin-top: 350px;
+  padding: 1.5rem;
+  font-family: fantasy;
+  font-size: larger;
+  height: max-content;
+  width: max-content;
+  display: block;
+  transition: all 500ms;
+}
+button:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: #0fb1e2;
+  border: 2px solid #006daa;
+  box-shadow: 0em 1.5em 2.5em -0.6em #00c3ff;
+  transform: translateY(-20px);
+  /* transition: all 500ms; */
+  cursor: pointer;
+}

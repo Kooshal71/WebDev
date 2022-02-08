@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>GET and POST</h1>
+    <h2>POST</h2>
+    <form action="http://localhost:3030/tacos" method="post">
+      <label for="taco">Name</label>
+      <input type="text" name="taco" />
+      <br />
+      <label for="quant">Number</label>
+      <input type="number" name="quant" />
+      <button>Submit</button>
+    </form>
+    <h2>GET</h2>
+    <form action="http://localhost:3030/tacos" method="get">
+      <label for="taco">Name</label>
+      <input type="text" name="taco" />
+      <br />
+      <label for="quant">Number</label>
+      <input type="number" name="quant" />
+      <button>Submit</button>
+    </form>
+  </body>
+</html>

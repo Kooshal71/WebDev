@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table</title>
+  </head>
+
+  <body>
+    <h1>Heaviest birds</h1>
+    <!--
+      A table is a structured set of data
+      It allows for easy positioning of the information
+      Tables makes the arrangement much easier
+      Tables should only be used on info that blendes into tablular format
+    -->
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">Name</th>
+          <th colspan="2">Average Weight</th>
+          <th rowspan="2">flighted</th>
+        </tr>
+        <tr>
+          <th>(kg)</th>
+          <th>(lbs)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ostrich</td>
+          <td>104 kg</td>
+          <td>230 lbs</td>
+          <td>Not</td>
+        </tr>
+        <tr>
+          <td>Emu</td>
+          <td>30 kg</td>
+          <td>50 lbs</td>
+          <td>Not</td>
+        </tr>
+        <tr>
+          <td>Dometic Turkey</td>
+          <td>10 kg</td>
+          <td>25 lbs</td>
+          <td>Yes</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--
+      Forms
+      it is like a shell or coantainer
+      Contains collection of inputs
+      action attribute specifies where the data should be sent
+      
+      Label
+      it is used for inputs
+      They are not just visually related but also programatically
+      This means that screen readers will associate them
+      There is an increased hit area when using labels
+      The relation is created using the same id
+    -->
+    <h1>Forms</h1>
+    <form action="/index1.html" target="blank">
+      <label for="name">Enter Name</label>
+      <input type="text" name="name" id="name" placeholder="username" />
+      <br />
+      <label for="pass">Enter password</label>
+      <input type="password" name="pass" id="pass" placeholder="password" />
+      <br />
+      <label for="col">Select facourite color</label>
+      <input type="color" name="col" id="col" />
+      <br />
+      <label for="age">Are you 19?</label>
+      <input type="checkbox" name="age" id="age" checked />
+      <br />
+      <label for="mob">Enter contact number</label>
+      <input type="tel" name="mob" id="mob" />
+      <br />
+      <label for="Gender">Male</label>
+      <input type="radio" name="Gender" id="Gender" value="M" />
+      <label for="Gender">Female</label>
+      <input type="radio" name="Gender" id="Gender" value="F" />
+      <br />
+      <!--
+        Select is not a standard input and the syntax of usage is also different
+      -->
+      <label for="pets">Choose your pet:</label>
+      <select name="pet" id="pets">
+        <option value="">Please choose an option</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="fish">Fish</option>
+        <option value="bird">Bird</option>
+      </select>
+      <br />
+      <label for="amplitude">amplitude</label>
+      <input
+        type="range"
+        name="amplitude"
+        id="amplitude"
+        min="0"
+        max="100"
+        step="5"
+      />
+      <label for="frequency">frequency</label>
+      <input
+        type="range"
+        name="frequency"
+        id="frequency"
+        min="0"
+        max="100"
+        step="5"
+      />
+      <br />
+      <label for="story">Enter your complaints:</label>
+      <br />
+      <!--
+        Textarea is not a standard input and the syntax is different
+      -->
+      <textarea
+        name="story"
+        id="story"
+        cols="30"
+        rows="10"
+        placeholder="Enter here"
+      ></textarea>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <hr />
+    <button type="menu">Outside the form</button>
+    <!--
+      Buttons
+      They are used to provide some functionality
+      When placed inside the form the default behaviour is to submit the form
+      We can change this by using the type attribute
+    -->
+    <form action="https://www.youtube.com/results" target="blank">
+      <label for="search">Search in YT</label>
+      <input type="text" name="search_query" id="search" />
+      <button>Search</button>
+    </form>
+    <form action="https://www.google.com/search" target="blank">
+      <label for="search">Search in google</label>
+      <input type="text" name="q" id="search" />
+      <button>Search</button>
+    </form>
+    <!--
+      Form validations
+      the constraints that we add to the inputs 
+      the built in browser validations are only on client side and not the server side
+    -->
+    <h2>validations</h2>
+    <form action="/dummy.html" target="blank">
+      <label for="first">Enter First Name</label>
+      <input type="text" id="first" name="first" required />
+      <br />
+      <label for="user">Enter unsername</label>
+      <input
+        type="text"
+        id="user"
+        name="user"
+        minlength="5"
+        required
+        placeholder="username"
+      />
+      <br />
+      <label for="mail">Enter email</label>
+      <input type="email" id="mail" name="mail" required />
+      <br />
+      <button>Submit</button>
+    </form>
+  </body>
+</html>

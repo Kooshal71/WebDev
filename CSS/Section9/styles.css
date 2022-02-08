@@ -1,0 +1,44 @@
+div {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  margin: 20px;
+  border: black solid;
+}
+#first {
+  background-color: grey;
+}
+#third {
+  background-color: grey;
+  border-bottom: solid green 3px;
+}
+#second {
+  background-color: green;
+  position: relative;
+  top: 100px;
+}
+.circle {
+  display: block;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  top: 100px;
+  border-radius: 50%;
+  background-color: cyan;
+  transition: 1s;
+  border: solid black 3px;
+}
+.circle:hover {
+  background-color: yellowgreen;
+  border-radius: 0%;
+  transition: 3s;
+}
+/* body {
+  background-image: url("https://images.unsplash.com/photo-1629878165113-73a6276d25a6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80");
+} */
+section {
+  transform: translateY(100px);
+}
+#one {
+  font-family: "Roboto", sans-serif;
+}

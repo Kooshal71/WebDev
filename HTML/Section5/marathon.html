@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+  </head>
+
+  <body>
+    <h1>Marathon Registeration!</h1>
+    <h2>Some guidelines:</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Age Group</th>
+          <th>Fees</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fun Run 5k</td>
+          <td>All Age groups allowed</td>
+          <td>Rs 500/-</td>
+        </tr>
+        <tr>
+          <td>Half Marathon</td>
+          <td>Above 15</td>
+          <td>Rs 1000/-</td>
+        </tr>
+        <tr>
+          <td>Full Marathon</td>
+          <td>Only Adults</td>
+          <td>Rs 2000/-</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <br />
+    <form action="/blank" target="blank">
+      <label for="first">First Name</label>
+      <input type="text" name="first" id="first" required />
+      <label for="second">Last Name</label>
+      <input type="text" name="second" id="second" required />
+      <br />
+      Select a race:
+      <br />
+      <input type="radio" name="type" value="5k" id="fivek" />
+      <label for="fivek">Fun Run 5k</label>
+      <br />
+      <input type="radio" name="type" value="half" id="half" />
+      <label for="half">Half Marathon</label>
+      <br />
+      <input type="radio" name="type" value="full" id="full" />
+      <label for="full">Full Marathon</label>
+      <br />
+      <label for="mail">Email</label>
+      <input type="email" name="mail" id="mail" required />
+      <label for="pass">Password</label>
+      <input type="password" id="pass" name="pass" required />
+      <br />
+      <label for="age">Select age group</label>
+      <select name="age" id="age">
+        <option value="" selected>--Please select an option--</option>
+        <option value="U12">Under 12</option>
+        <option value="U15">Under 15</option>
+        <option value="U18">Under 18</option>
+        <option value="A">Adult</option>
+      </select>
+      <br />
+      <button>Register</button>
+    </form>
+  </body>
+</html>
