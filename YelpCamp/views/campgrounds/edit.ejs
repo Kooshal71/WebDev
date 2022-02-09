@@ -6,6 +6,8 @@
       action="/campgrounds/<%= campground.id %>?_method=PUT"
       ,
       method="post"
+      novalidate
+      class="needs-validation"
     >
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
@@ -15,7 +17,9 @@
           name="title"
           class="form-control"
           value="<%= campground.title %>"
+          required
         />
+        <div class="valid-feedback">Looks Good!</div>
       </div>
       <div class="mb-3">
         <label for="location" class="form-label">Location</label>
@@ -25,7 +29,9 @@
           name="location"
           class="form-control"
           value="<%= campground.location %>"
+          required
         />
+        <div class="valid-feedback">Looks Good!</div>
       </div>
       <div class="mb-3">
         <label for="images" class="form-label">Image</label>
@@ -35,17 +41,21 @@
           name="image"
           class="form-control"
           value="<%= campground.image %>"
+          required
         />
+        <div class="valid-feedback">Looks Good!</div>
       </div>
-      <div class="mb-3">
-        <label for="price" class="form-label">Price</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
         <input
-          type="text"
-          id="price"
-          name="price"
+          type="number"
           class="form-control"
-          value="$<%= campground.price %>"
+          required
+          aria-label="Amount (to the nearest dollar)"
+          value="<%=campground.price%>"
         />
+        <div class="valid-feedback">Looks Good!</div>
+        <!-- <span class="input-group-text">.00</span> -->
       </div>
       <div class="mb-3">
         <label for="Desc" class="form-label">Description</label>
@@ -55,10 +65,12 @@
           cols="20"
           rows="10"
           class="form-control"
+          required
         >
           <%= campground.description %>"
           </textarea
         >
+        <div class="valid-feedback">Looks Good!</div>
       </div>
       <!-- <br /> -->
       <div class="mb-3">

@@ -45,9 +45,16 @@ app.get("/campgrounds/:id/edit", async (req, res) => {
 
 app.post("/campgrounds", async (req, res) => {
     // res.send(req.body)
+    try{
     const campground = new Campground(req.body)
+    console.log(campground)
     await campground.save()
     res.redirect(`/campgrounds/${campground.id}`)
+    }
+    catch(e)
+    {
+        next(e)
+    }
 })
 
 app.put("/campgrounds/:id", async(req, res) => {
@@ -60,6 +67,10 @@ app.delete("/campgrounds/:id", async(req, res) => {
     const campground = await Campground.findByIdAndDelete(req.params.id)
     res.redirect("/campgrounds")
     // res.send("Heello")
+})
+
+app.use((err, req, res, next) => {
+    res.send("Something went wrong")
 })
 
 app.listen(3000, () => console.log("Server is running on port 3000"))

@@ -44,5 +44,5 @@ const seedProducts = [
         category:"vegetable"
     }
 ]
-Product.deleteMany()
+Product.deleteMany({}).then(() => console.log("Contents deleted"))
 Product.insertMany(seedProducts).then(p => console.log(p))
