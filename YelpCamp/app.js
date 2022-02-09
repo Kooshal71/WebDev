@@ -9,6 +9,8 @@ const methodOverride = require("method-override")
 const db = mongoose.connection
 const ejsMate = require("ejs-mate")
 const catchAsync = require("./utils/wrapAsync")
+const expressError = require("./utils/expressError")
+const joi = require("joi")
 
 db.on("error", console.error.bind(console, "connection error"))
 db.once("open", () => {
@@ -46,9 +48,11 @@ app.get("/campgrounds/:id", catchAsync( async (req, res) => {
 }))
 
 app.post("/campgrounds", catchAsync( async (req, res, next) => {
+    // if(!req.body.campground) throw new expressError("Invalid Data", 400)
+    const campgroundSchema = 
     const campground = new Campground(req.body)
     console.log(campground)
-    console.log(campground.image, campground.id)
+    // console.log(campground.image, campground.id)
     await campground.save()
     res.redirect(`/campgrounds/${campground.id}`)
 }))
@@ -65,8 +69,14 @@ app.delete("/campgrounds/:id", catchAsync( async(req, res) => {
     // res.send("Heello")
 }))
 
+app.all("*", (req, res, next) => {
+    next(new expressError("Page not found", 404))
+})
+
 app.use((err, req, res, next) => {
-    res.send("Something went wrong")
+    const {status = 500, message = "Something went wrong"} = err
+    res.status(status).render("errors", {err})
+    // res.send("Something went wrong")
 })
 
 app.listen(3000, () => console.log("Server is running on port 3000"))
