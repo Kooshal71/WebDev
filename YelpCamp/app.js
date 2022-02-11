@@ -10,7 +10,7 @@ const db = mongoose.connection
 const ejsMate = require("ejs-mate")
 const catchAsync = require("./utils/wrapAsync")
 const expressError = require("./utils/expressError")
-const joi = require("joi")
+const campgroundSchema = require("./schemas")
 
 db.on("error", console.error.bind(console, "connection error"))
 db.once("open", () => {
@@ -22,6 +22,19 @@ app.set("views", path.join(__dirname, "views"))
 app.use(express.urlencoded({extended:true}))
 app.use(methodOverride("_method"))
 app.engine("ejs", ejsMate)
+
+const validateCampground = (req, res, next) => {
+    const campgroundSchemx = campgroundSchema.campgroundSchema;
+    console.log(req.body)
+    const result = campgroundSchemx.validate(req.body)
+    console.log(result)
+    if(result.error){
+        const msg = result.error.details.map(el => el.message).join(",")
+        throw new expressError(msg, 400)
+    }else{
+        next()
+    }
+}
 
 app.get("/", (req, res) => {
     res.render("home")
@@ -47,9 +60,9 @@ app.get("/campgrounds/:id", catchAsync( async (req, res) => {
     res.render("campgrounds/show", {campground})
 }))
 
-app.post("/campgrounds", catchAsync( async (req, res, next) => {
+
+app.post("/campgrounds", validateCampground,  catchAsync( async (req, res, next) => {
     // if(!req.body.campground) throw new expressError("Invalid Data", 400)
-    const campgroundSchema = 
     const campground = new Campground(req.body)
     console.log(campground)
     // console.log(campground.image, campground.id)
