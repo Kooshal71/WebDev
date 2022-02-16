@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { stringify } = require('uuid');
 mongoose.connect('mongodb://localhost:27017/mongoRelation');
 
 const userSchema = new mongoose.Schema({
@@ -27,7 +26,6 @@ const makeUser = async () => {
         city:"BNG",
         state:"KA",
         country:"IND"
-
     })
     const res = await u.save()
     console.log(res)
