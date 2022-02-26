@@ -15,6 +15,11 @@
           ><%=foundProduct.category%></a
         >
       </li>
+      <li>
+        <a href="/farms/<%= foundProduct.farm.id %> "
+          ><%= foundProduct.farm.name %>
+        </a>
+      </li>
     </ul>
     <a href="/products">All products</a>
     <a href="/products/<%=foundProduct.id%>/edit">Edit Product</a>

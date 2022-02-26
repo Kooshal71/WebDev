@@ -7,8 +7,9 @@
     <title>Document</title>
   </head>
   <body>
+    <h1><%= farm.name %></h1>
     <h1>New products</h1>
-    <form action="/products" , method="post">
+    <form action="/farms/<%= farm.id %>/products " , method="post">
       <label for="name">Product Name</label>
       <input type="text" name="name" placeholder="Product Name" id="name" />
       <br />

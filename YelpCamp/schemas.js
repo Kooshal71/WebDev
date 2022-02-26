@@ -1,3 +1,4 @@
+const Joi = require("joi")
 const joi = require("joi")
 
 module.exports.campgroundSchema = joi.object({
@@ -6,4 +7,9 @@ module.exports.campgroundSchema = joi.object({
     image:joi.string().required(),
     description:joi.string().required(),
     location:joi.string().required()
+})
+
+module.exports.reviewSchema = joi.object({
+    rating:Joi.number().required(),
+    body:joi.string().required().min(1).max(5)
 })
