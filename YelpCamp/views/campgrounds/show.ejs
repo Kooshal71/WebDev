@@ -72,7 +72,7 @@
           <p class="card-title">Rating:<%= review.rating %></p>
           <p class="card-text">Review:<%= review.body %></p>
           <form action="/campgrounds/<%=campground.id%>/reviews/<%=review.id%>?_method=DELETE" 
-            method="post">
+            method="post" class="needs-validation">
           <button class="btn btn-danger">
             Delete
           </button>
