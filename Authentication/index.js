@@ -7,4 +7,14 @@ const hashPassword = async(pw) => {
     console.log(hashed)
 }
 
+const login = async(pw, hashedPw) => {
+    const result = await bcrpyt.compare(pw, hashedPw)
+    if(result){
+        console.log("Successful login")
+    }
+    else{
+        console.log("Wrong password")
+    }
+}
+
 hashPassword("iwn")
