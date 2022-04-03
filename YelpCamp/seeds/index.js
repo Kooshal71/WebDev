@@ -17,6 +17,7 @@ const seedDB = async() => {
     for(let i = 0; i<50; i++){
         const random1000 = Math.floor(Math.random()*1000)
         const camp = new Campground({
+            author:"62481b16dff07da8a46ec75e",
             title: `${sample(descriptors)} ${sample(places)}`,
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             image: `https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.YRxp_LLU7rvg6fxmZnHGSAHaEK%26pid%3DApi&f=1`,

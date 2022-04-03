@@ -25,7 +25,7 @@ router.post("/register", catchAsync(async (req, res, next) => {
             return next(err)
         }
     })
-    req.login(registeredUser)
+    req.login(registeredUser, () => console.log("Logged in"))
     req.flash("success", "Welcome to YelpCamp")
     res.redirect("/campgrounds")
     }catch(e){
