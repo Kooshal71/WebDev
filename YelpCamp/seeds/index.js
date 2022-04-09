@@ -20,9 +20,26 @@ const seedDB = async() => {
             author:"62481b16dff07da8a46ec75e",
             title: `${sample(descriptors)} ${sample(places)}`,
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
-            image: `https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.YRxp_LLU7rvg6fxmZnHGSAHaEK%26pid%3DApi&f=1`,
             description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. ",
-            price: Math.floor(Math.random() * 100) + 15 
+            price: Math.floor(Math.random() * 100) + 15, 
+            images : [ 
+                { 
+                    "url" : "https://res.cloudinary.com/dcnkr32rf/image/upload/v1649432472/YelpCamp/axso4ammfqcuarstglla.jpg", 
+                    "fileName" : "YelpCamp/axso4ammfqcuarstglla" 
+                }, 
+                { 
+                    "url" : "https://res.cloudinary.com/dcnkr32rf/image/upload/v1649432473/YelpCamp/vqtbfchxyrfvesv8opsg.jpg", 
+                    "fileName" : "YelpCamp/vqtbfchxyrfvesv8opsg" 
+                }, 
+                { 
+                    "url" : "https://res.cloudinary.com/dcnkr32rf/image/upload/v1649432474/YelpCamp/po8ljj3rpayfht2ilq5v.jpg", 
+                    "fileName" : "YelpCamp/po8ljj3rpayfht2ilq5v" 
+                }, 
+                { 
+                    "url" : "https://res.cloudinary.com/dcnkr32rf/image/upload/v1649432474/YelpCamp/ossbswwjsv5srwjpzi4e.jpg", 
+                    "fileName" : "YelpCamp/ossbswwjsv5srwjpzi4e" 
+                } 
+            ]
         })
         await camp.save()
     }

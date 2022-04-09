@@ -1,5 +1,6 @@
 const Campground = require("../models/campground")
 const Review = require("../models/review")
+const {cloudinary} = require("../cloudinary")
 
 module.exports.index = async (req, res) => {
     const campgrounds = await Campground.find()
@@ -33,11 +34,14 @@ module.exports.find = async (req, res) => {
 
 module.exports.postCreate =  async (req, res, next) => {
     // if(!req.body.campground) throw new expressError("Invalid Data", 400)
+    console.log(req.body)
     const campground = new Campground(req.body)
     console.log(campground)
     campground.author = req.user._id
+    campground.images = req.files.map(f => ({url: f.path, fileName:f.filename}))
     // console.log(campground.image, campground.id)
     await campground.save()
+    console.log(campground)
     req.flash("success", "successfully made a new campground")
     res.redirect(`/campgrounds/${campground.id}`)
 }
@@ -52,8 +56,22 @@ module.exports.postReview = async (req, res) => {
 }
 
 module.exports.postEdit = async(req, res) => {
+    // console.log("new one\n\n",req.body)
     const campground = await Campground.findByIdAndUpdate(req.params.id, req.body, {new:true})
-    console.log(campground)
+    const imgs = req.files.map(f => ({url: f.path, fileName:f.filename}))
+    // console.log("Im in Edit Route",imgs)
+    await campground.images.push(...imgs)
+    await campground.save()
+    if(req.body.deleteImages){
+        // console.log("\n\n\n Inside the condition \n\n\n")
+        // console.log(req.body.deleteImages)
+        for(let fileName of req.body.deleteImages){
+            await cloudinary.uploader.destroy(fileName)
+        }
+        await campground.updateOne({$pull: {images: {fileName: {$in: req.body.deleteImages}}}})
+        // console.log(campground)
+    }
+    // console.log(campground)
     req.flash("success", ("Successfully Updated campground"))
     res.redirect(`/campgrounds/${campground.id}`)
 }
