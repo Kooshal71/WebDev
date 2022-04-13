@@ -1,6 +1,9 @@
 const Campground = require("../models/campground")
 const Review = require("../models/review")
 const {cloudinary} = require("../cloudinary")
+const mpxGeocoding = require ("@mapbox/mapbox-sdk/services/geocoding")
+const mapboxToken = process.env.MAPBOX_TOKEN
+const geocoder = mpxGeocoding({accessToken:mapboxToken})
 
 module.exports.index = async (req, res) => {
     const campgrounds = await Campground.find()
@@ -34,9 +37,14 @@ module.exports.find = async (req, res) => {
 
 module.exports.postCreate =  async (req, res, next) => {
     // if(!req.body.campground) throw new expressError("Invalid Data", 400)
-    console.log(req.body)
+    const geoData = await geocoder.forwardGeocode({
+        query: req.body.location,
+        limit:1
+    }).send()
+    // res.send("GGS")
     const campground = new Campground(req.body)
-    console.log(campground)
+    campground.geometry = geoData.body.features[0].geometry
+    // console.log(campground)
     campground.author = req.user._id
     campground.images = req.files.map(f => ({url: f.path, fileName:f.filename}))
     // console.log(campground.image, campground.id)
