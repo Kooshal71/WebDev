@@ -98,7 +98,7 @@
         <button class="btn btn-success">Submit</button>
       </form>
       <% } %> 
-      <div id='map' style='width: 400px; height: 300px;'></div>
+      <div id='details-map'></div>
       <div class="card">
         <h3>Reviews</h1>
         <div class="card-body">
@@ -123,13 +123,14 @@
 </div>
 
 <script>
-  mapboxgl.accessToken = "<%- process.env.MAPBOX_TOKEN %>"
+  mapboxgl.accessToken = "<%- process.env.MAPBOX_TOKEN %>";
   var map = new mapboxgl.Map({
-    container: 'map',
+    container: 'details-map',
     style: 'mapbox://styles/mapbox/streets-v11',
     center:campground.geometry.coordinates,
     zoom:9
   });
+  map.addControl(new mapboxgl.NavigationControl())
 
   var marker = new mapboxgl.Marker()
     .setLngLat(campground.geometry.coordinates)
