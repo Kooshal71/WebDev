@@ -127,9 +127,9 @@ const connectSrcUrls = [
     "https://res.cloudinary.com/dcnkr32rf/"
 ];
 const fontSrcUrls = [ "https://res.cloudinary.com/dcnkr32rf/" ];
- 
+
 app.use(
-    helmet.contentSecurityPolicy({
+    helmet({contentSecurityPolicy:{
         directives : {
             defaultSrc : [],
             connectSrc : [ "'self'", ...connectSrcUrls ],
@@ -148,6 +148,8 @@ app.use(
             mediaSrc   : [ "https://res.cloudinary.com/dcnkr32rf/" ],
             childSrc   : [ "blob:" ]
         }
+    },
+        crossOriginEmbedderPolicy: false
     })
 );
 
