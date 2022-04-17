@@ -16,6 +16,8 @@ const session = require("express-session")
 const flash = require("connect-flash")
 const passport = require("passport")
 const localStrategy = require("passport-local")
+const mongoSanitize = require("express-mongo-sanitize")
+const helmet = require("helmet")
 
 const userRoutes = require("./routes/users")
 const campgroundRoutes = require("./routes/campground")
@@ -36,8 +38,9 @@ app.use(express.urlencoded({extended:true}))
 app.use(methodOverride("_method"))
 app.engine("ejs", ejsMate)
 app.use(express.static(path.join(__dirname, "public")))
-
+app.use(mongoSanitize())
 const sessionConfig = {
+    name:"GGS",
     secret:"Kewl",
     resave:false,
     saveUnitialized:true,
@@ -47,6 +50,107 @@ const sessionConfig = {
         maxAge:1000 * 60 * 60 * 24 * 7
     }
 }
+/*
+const scriptSrcUrls = [
+    "https://stackpath.bootstrapcdn.com/",
+    "https://api.tiles.mapbox.com/",
+    "https://api.mapbox.com/",
+    "https://kit.fontawesome.com/",
+    "https://cdnjs.cloudflare.com/",
+    "https://cdn.jsdelivr.net/",
+    "https://res.cloudinary.com/dcnkr32rf/",
+];
+const styleSrcUrls = [
+    "https://kit-free.fontawesome.com/",
+    "https://stackpath.bootstrapcdn.com/",
+    "https://api.mapbox.com/",
+    "https://api.tiles.mapbox.com/",
+    "https://fonts.googleapis.com/",
+    "https://use.fontawesome.com/",
+    "https://cdn.jsdelivr.net/",
+    "https://res.cloudinary.com/dcnkr32rf/",
+];
+const connectSrcUrls = [
+    "https://api.mapbox.com/",
+    "https://*.tiles.mapbox.com/",
+    "https://events.mapbox.com/",
+    "https://res.cloudinary.com/dcnkr32rf/",
+];
+const fontSrcUrls = ["https://res.cloudinary.com/dcnkr32rf/"];
+app.use(
+    helmet.contentSecurityPolicy({
+        directives: {
+            defaultSrc: [],
+            connectSrc: ["'self'", ...connectSrcUrls],
+            scriptSrc: ["'unsafe-inline'", "'self'", ...scriptSrcUrls],
+            styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
+            workerSrc: ["'self'", "blob:"],
+            objectSrc: [],
+            imgSrc: [
+                "'self'",
+                "blob:",
+                "data:",
+                "https://res.cloudinary.com/dcnkr32rf/*", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
+                "https://images.unsplash.com/",
+            ],
+            fontSrc: ["'self'", ...fontSrcUrls],	
+            mediaSrc   : [ "https://res.cloudinary.com/dcnkr32rf/" ],	
+            childSrc   : [ "blob:" ]
+        },
+    })
+);
+*/
+
+const scriptSrcUrls = [
+    "https://stackpath.bootstrapcdn.com/",
+    "https://api.tiles.mapbox.com/",
+    "https://api.mapbox.com/",
+    "https://kit.fontawesome.com/",
+    "https://cdnjs.cloudflare.com/",
+    "https://cdn.jsdelivr.net/",
+    "https://res.cloudinary.com/dcnkr32rf/"
+];
+const styleSrcUrls = [
+    "https://kit-free.fontawesome.com/",
+    "https://stackpath.bootstrapcdn.com/",
+    "https://api.mapbox.com/",
+    "https://api.tiles.mapbox.com/",
+    "https://fonts.googleapis.com/",
+    "https://use.fontawesome.com/",
+    "https://cdn.jsdelivr.net/",
+    "https://res.cloudinary.com/dcnkr32rf/"
+];
+const connectSrcUrls = [
+    "https://*.tiles.mapbox.com",
+    "https://api.mapbox.com",
+    "https://events.mapbox.com",
+    "https://res.cloudinary.com/dcnkr32rf/"
+];
+const fontSrcUrls = [ "https://res.cloudinary.com/dcnkr32rf/" ];
+ 
+app.use(
+    helmet.contentSecurityPolicy({
+        directives : {
+            defaultSrc : [],
+            connectSrc : [ "'self'", ...connectSrcUrls ],
+            scriptSrc  : [ "'unsafe-inline'", "'self'", ...scriptSrcUrls ],
+            styleSrc   : [ "'self'", "'unsafe-inline'", ...styleSrcUrls ],
+            workerSrc  : [ "'self'", "blob:" ],
+            objectSrc  : [],
+            imgSrc     : [
+                "'self'",
+                "blob:",
+                "data:",
+                "https://res.cloudinary.com/dcnkr32rf/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT!
+                "https://images.unsplash.com/"
+            ],
+            fontSrc    : [ "'self'", ...fontSrcUrls ],
+            mediaSrc   : [ "https://res.cloudinary.com/dcnkr32rf/" ],
+            childSrc   : [ "blob:" ]
+        }
+    })
+);
+
 app.use(session(sessionConfig))
 app.use(flash())
 
@@ -60,6 +164,7 @@ passport.deserializeUser(User.deserializeUser())
 
 
 app.use((req, res, next) => {
+    // console.log(req.query)
     res.locals.currentUser = req.user
     res.locals.success = req.flash("success")
     res.locals.error = req.flash("error")
