@@ -18,13 +18,16 @@ const passport = require("passport")
 const localStrategy = require("passport-local")
 const mongoSanitize = require("express-mongo-sanitize")
 const helmet = require("helmet")
+const dbUrl = 'mongodb://localhost:27017/yelp-camp' || process.env.DB_URL 
+// const MongoDBStore = require("connect-mongo")(session)
+const MongoDBStore = require("connect-mongo")
 
 const userRoutes = require("./routes/users")
 const campgroundRoutes = require("./routes/campground")
 const reviewRoutes = require("./routes/reviews")
 const User = require("./models/user")
-
-mongoose.connect("mongodb://localhost:27017/yelp-camp", {useNewUrlParser:true, useUnifiedTopology:true})
+//mongodb://localhost:27017/yelp-camp
+mongoose.connect(dbUrl, {useNewUrlParser:true, useUnifiedTopology:true})
 const db = mongoose.connection
 
 db.on("error", console.error.bind(console, "connection error"))
@@ -39,9 +42,23 @@ app.use(methodOverride("_method"))
 app.engine("ejs", ejsMate)
 app.use(express.static(path.join(__dirname, "public")))
 app.use(mongoSanitize())
+
+const secret = process.env.SECRET || "Kewl"
+
+const store = MongoDBStore.create({
+    mongoUrl: dbUrl,
+    secret,
+    touchAfter: 24 *3600
+})
+
+store.on("error", function(e){
+    console.log("Session Store Error", e)
+})
+
 const sessionConfig = {
+    store,
     name:"GGS",
-    secret:"Kewl",
+    secret,
     resave:false,
     saveUnitialized:true,
     cookie:{
